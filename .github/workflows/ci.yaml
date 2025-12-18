@@ -23,6 +23,10 @@ jobs:
             apt: libmc-rtc-dev
           ros: |
             apt: mc-rtc-plugin
+          github: |
+            - path: isri-aist/h1_description
+              ref: main
 
-      - name: Build with colcon
-        uses: jrl-umi3218/github-actions/build-colcon-project@master
+      - uses: actions/checkout@v6
+      - name: Build with CMake
+        uses: jrl-umi3218/github-actions/build-cmake-project@master
